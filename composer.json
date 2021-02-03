@@ -1,0 +1,19 @@
+{
+  "name": "xml-parser/xml-parser",
+  "description": "xml-parser",
+  "keywords": ["xml", "parser", "xml_parser", "xml-parser"],
+  "license": "MIT",
+  "authors":[
+    {
+      "name": "Ihor Protikov",
+      "email": "info@phoroigor.name"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "App\\Components\\": "components/",
+      "App\\Interfaces\\": "interfaces/"
+    }
+  }
+}

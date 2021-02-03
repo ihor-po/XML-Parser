@@ -1,2 +1,5 @@
-./.idea
+/.idea/*
+/vendor
 *.xml
+!example.xml
+test.*
