@@ -1,5 +1,5 @@
 <?php
-const CHUNK_SIZE = 50;
+const CHUNK_SIZE = 150;
 const FILE_NAME = 'example.xml';
 const ENCODING = 'windows-1251';
 const DB_HOST = '127.0.0.1';

@@ -1,16 +1,15 @@
 <?php
 
-
 namespace App\Components\XmlParser;
 
-
+use App\Interfaces\XmlParser\XmlParserInterface;
 use XMLReader;
 
 /**
  * Class XmlParser
  * @package App\Components\XmlParser
  */
-class XmlParser
+class XmlParser implements XmlParserInterface
 {
     private const NODE_RECORD = 'RECORD';
 

@@ -4,6 +4,7 @@
 namespace App\Components\DataBase;
 
 
+use App\Interfaces\DataBase\DataBaseComponentInterface;
 use Exception;
 use PDO;
 
@@ -11,7 +12,7 @@ use PDO;
  * Class DataBaseComponent
  * @package App\Components\DataBase
  */
-class DataBaseComponent
+class DataBaseComponent implements DataBaseComponentInterface
 {
     private $db;
 

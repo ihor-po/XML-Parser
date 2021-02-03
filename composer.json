@@ -15,5 +15,10 @@
       "App\\Components\\": "components/",
       "App\\Interfaces\\": "interfaces/"
     }
+  },
+  "require": {
+    "ext-xmlreader": "*",
+    "ext-pdo": "*",
+    "ext-json": "*"
   }
 }
