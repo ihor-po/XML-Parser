@@ -51,6 +51,11 @@ class XmlParser
         $this->xmlReader->open($fileName, $this->encoding);
         $this->nodeRead($save);
         $this->xmlReader->close();
+
+        if (count($this->chunk)) {
+            $save($this->chunk);
+            $this->resetChunk();
+        }
     }
 
     /**
