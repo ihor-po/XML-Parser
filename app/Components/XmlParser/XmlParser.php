@@ -32,12 +32,13 @@ class XmlParser implements XmlParserInterface
      * XmlParser constructor.
      * @param int $chunkSize
      * @param string $encoding
+     * @param XMLReader $xmlReader
      */
-    public function __construct(int $chunkSize, string $encoding)
+    public function __construct(int $chunkSize, string $encoding, XMLReader $xmlReader)
     {
         $this->chunkSize = $chunkSize;
         $this->encoding = $encoding;
-        $this->xmlReader = new XMLReader();
+        $this->xmlReader = $xmlReader;
     }
 
     /**

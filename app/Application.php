@@ -8,6 +8,7 @@ use App\Components\AddressParser\AddressParser;
 use App\Components\DataBase\DataBaseComponent;
 use App\Components\XmlParser\XmlParser;
 use Exception;
+use XMLReader;
 
 
 /**
@@ -24,7 +25,7 @@ class Application
      */
     public function start(string $fileName, int $chunkSize, string $encoding)
     {
-//        $this->testXmlParser($fileName, $chunkSize, $encoding);
+        $this->testXmlParser($fileName, $chunkSize, $encoding);
         $this->testAddressParser('Україна, 00000, Обласна обл., місто Чудове, ПРОВУЛОК ФРАНКА, будинок 44, квартира 344');
     }
 
@@ -43,25 +44,17 @@ class Application
             $dbComponent->insertChunk($chunk);
         };
 
-        $xmlParser = new XmlParser($chunkSize, $encoding);
+        $xmlParser = new XmlParser($chunkSize, $encoding, new XMLReader());
         $xmlParser->parse($fileName, $saveChunk);
     }
 
     /**
-     *
+     * @param string $address
      */
     private function testAddressParser(string $address)
     {
-//        $addresses = file_get_contents('./test.json');
-//        $addresses = json_decode($addresses, true);
-//        $addresses = $addresses['data'];
-
-//        foreach ($addresses as $address) {
-            $addressParser = new AddressParser();
-//            $addressParser->parse($address['ADDRESS']);
-            $parts = $addressParser->parse($address);
-            print_r(['parts' => $parts]);
-//        }
-
+        $addressParser = new AddressParser();
+        $parts = $addressParser->parse($address);
+        print_r(['parts' => $parts]);
     }
 }

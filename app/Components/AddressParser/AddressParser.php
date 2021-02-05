@@ -40,8 +40,6 @@ class AddressParser
         $addressParts = explode(',', $address);
         $parts = $this->getParts($addressParts);
 
-//        var_dump($parts);
-//        echo PHP_EOL . $address . PHP_EOL;
         return $parts;
     }
 
